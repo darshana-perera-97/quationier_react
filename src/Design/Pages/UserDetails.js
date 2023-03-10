@@ -3,6 +3,7 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import logo from "../Components/hsenidMobile-logo-2018-fullcolor-small.png";
 import redHatlogo from "../Components/Red_Hat-Logo.svg";
+import { dataStore } from "../Data/DataHandle";
 
 export default function UserDetails(prop) {
   const [user, setUser] = React.useState({
@@ -12,10 +13,31 @@ export default function UserDetails(prop) {
     company: "-",
     job: "-",
     industry: "-",
-    size: "",
+    size: "-",
     country: "-",
+    total_mark: "",
+    answers: ["", ""],
   });
   const [value, setValue] = React.useState("");
+  const [emailValidation, setemailValidation] = React.useState(false);
+  const [Validation, setValidation] = React.useState(false);
+  function validate() {
+    if (
+      user.fullName !== "-" &&
+      value !== "-" &&
+      emailValidation &&
+      user.company !== "-" &&
+      user.job !== "-" &&
+      user.size !== "-" &&
+      user.industry !== "-" &&
+      user.country !== "-"
+    ) {
+      // console.log("val");
+      setValidation(true);
+    } else {
+      setValidation(false);
+    }
+  }
   return (
     <div>
       <div className="page1">
@@ -44,6 +66,9 @@ export default function UserDetails(prop) {
                   tmp.fullName = e.target.value;
                   setUser(tmp);
                 }}
+                onClick={() => {
+                  validate();
+                }}
               />
             </div>
             <div className="input-field-box">
@@ -58,10 +83,26 @@ export default function UserDetails(prop) {
               <input
                 className="single-input"
                 placeholder="Company Email"
+                type="email"
+                onClick={() => {
+                  validate();
+                }}
                 onChange={(e) => {
                   const tmp = user;
                   tmp.email = e.target.value;
                   setUser(tmp);
+                  console.log(e.target.value);
+                  if (
+                    e.target.value !== "" &&
+                    e.target.value.endsWith(".com") &&
+                    !e.target.value.endsWith("gmail.com") &&
+                    !e.target.value.endsWith("gmail.com")
+                  ) {
+                    setemailValidation(true);
+                    // console.log("Email Ok");
+                  } else {
+                    setemailValidation(false);
+                  }
                 }}
               />
             </div>
@@ -85,6 +126,9 @@ export default function UserDetails(prop) {
                   tmp.job = e.target.value;
                   setUser(tmp);
                 }}
+                onClick={() => {
+                  validate();
+                }}
               />
             </div>
             <div className="input-field-box">
@@ -97,6 +141,9 @@ export default function UserDetails(prop) {
                   const tmp = user;
                   tmp.industry = e.target.value;
                   setUser(tmp);
+                }}
+                onClick={() => {
+                  validate();
                 }}
               >
                 <option selected="selected" disabled="disabled">
@@ -370,6 +417,9 @@ export default function UserDetails(prop) {
                   tmp.size = e.target.value;
                   setUser(tmp);
                 }}
+                onClick={() => {
+                  validate();
+                }}
               >
                 <option value="" selected="selected" disabled="disabled">
                   -- Company Size* --
@@ -391,6 +441,9 @@ export default function UserDetails(prop) {
                   const tmp = user;
                   tmp.country = e.target.value;
                   setUser(tmp);
+                }}
+                onClick={() => {
+                  validate();
                 }}
               >
                 <option value="" selected="selected" disabled="disabled">
@@ -666,18 +719,32 @@ export default function UserDetails(prop) {
                 <option value="Zimbabwe">Zimbabwe</option>
               </select>
             </div>
-            <button
-              className="button_1"
-              onClick={() => {
-                const tmp = user;
-                tmp.contact = value;
-                setUser(tmp);
-                prop.setUserData(user);
-                prop.setgotUserDetails(true);
-              }}
-            >
-              Continue
-            </button>
+            {/* <p>fill the Form to Continue</p> */}
+            {/* {console.log(user.email.includes("gmail.com"))} */}
+            {Validation ? (
+              //   user.email !== "-"
+              // !user.email.includes("gmail.com") &&
+              // !user.email.includes("yahoo")
+              <div>
+                <button
+                  className="button_1"
+                  onClick={() => {
+                    const tmp = user;
+                    tmp.contact = value;
+                    setUser(tmp);
+                    prop.setUserData(user);
+                    prop.setgotUserDetails(true);
+                    dataStore(tmp);
+                  }}
+                >
+                  Continue
+                </button>
+              </div>
+            ) : (
+              <button className="button_1_d" disabled onClick={() => {}}>
+                Continue
+              </button>
+            )}
           </div>
         </div>
       </div>

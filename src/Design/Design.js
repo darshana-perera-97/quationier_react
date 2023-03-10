@@ -1,4 +1,5 @@
 import React from "react";
+import PageTitle from "./Components/PageTitle";
 import Quiz from "./Pages/Quiz";
 import THanking from "./Pages/THanking";
 import UserDetails from "./Pages/UserDetails";
@@ -16,6 +17,7 @@ export default function Design() {
         />
       ) : (
         <div>
+          <PageTitle />
           {!answered ? (
             <Quiz
               setanswered={setanswered}
