@@ -32,7 +32,222 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+/* custom css classes */
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: bolder;
+  background-color: #17a5a51f;
+  text-align: center
+}
+
+.page {
+  padding: 4% 0%;
+  margin: auto 12%;
+  background-color: #ffffff;
+}
+
+.page1 {
+  padding: 1% 0%;
+  margin: -6% 12%;
+  /* background-color: #ffffff; */
+}
+
+.page2 {
+  padding: 0px 15%;
+}
+
+p {
+  margin: 0px;
+}
+
+.page-main-title {
+  margin: 10px;
+  color: #6652a3;
+}
+
+.redhat-logo {
+  color: #ff0000;
+}
+
+.horizonatal-line {
+  height: 5px;
+  background-color: #2f4a5646;
+  margin: 30px 15%;
+}
+
+.button_1 {
+  padding: 13px 70px;
+  margin: 0px 0px;
+  background-color: #049ea1;
+  border: 2px solid #049ea1;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.5s;
+  width: 100%;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.button_1_d {
+  padding: 13px 70px;
+  margin: 0px 0px;
+  background-color: #c5c5c5;
+  border: 2px solid #c5c5c5;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.5s;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.button_1:hover {
+  background-color: #ffffff;
+  color: #049ea1;
+  border: 2px solid #049ea1;
+  box-shadow: 0px 0px 5px #049ea1;
+}
+
+.button_2 {
+  padding: 13px 40px;
+  margin: 40px 0px;
+  background-color: #049ea1;
+  border: 2px solid #049ea1;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.5s;
+  text-align: end;
+}
+
+.button_2:hover {
+  background-color: #ffffff;
+  color: #049ea1;
+  border: 2px solid #049ea160;
+}
+
+.button_3 {
+  padding: 13px 40px;
+  margin: 40px 0px;
+  background-color: #949494;
+  border: 2px solid #949494;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.5s;
+  text-align: end;
+}
+
+.input_field {
+  margin-top: 15px;
+}
+
+.quastion {
+  font-weight: 200;
+}
+
+.single-input {
+  border: 0px;
+  outline: 0px;
+  width: 98%;
+}
+
+.input-field-box {
+  border: 0.5px solid #049ea1;
+  padding: 6px 10px;
+  border-radius: 6px;
+  /* box-shadow: 0px 0px 5px #049ea14f; */
+  margin-bottom: 15px;
+}
+
+.input-field-box:hover {
+  border: 1.4px solid #049ea1;
+  padding: 6px 10px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 6px #049ea14f;
+  margin-bottom: 15px;
+}
+
+.welcome-page {
+  width: 100%;
+  margin: 10% auto;
+  margin-right: 10px;
+}
+
+.form {
+  width: 100%;
+  text-align: center;
+}
+
+.redhat-logo {
+  width: 50%;
+  margin-top: 10%;
+  margin-bottom: -6%;
+}
+
+.main-page {
+  display: flex;
+}
+
+.home-page-text {
+  font-weight: 300;
+  padding: 0 5%;
+  color: #282c34b6;
+  margin-top: 8%;
+}
+
+@media only screen and (max-width: 900px) {
+  .main-page {
+    display: block;
+  }
+
+  .page2 {
+    padding: 0px 10%;
+  }
+
+  .welcome-page,
+  .form {
+    width: 100%;
+  }
+
+  .company-logo {
+    width: 60%;
+    margin-top: 15%;
+  }
+
+  .redhat-logo {
+    width: 50%;
+    margin-top: 2%;
+  }
+}
+
+.fill-form {
+  padding: 13px 25%;
+  margin: 40px 0px;
+  color: #049ea1;
+  border: 2px solid #049ea1;
+  background: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 15px;
+}
+
+input,
+input:active {
+  border: 0px;
+  outline: 0px;
+}
+
+select {
+  border: 0px;
+  outline: 0px;
+  width: 100%;
 }
