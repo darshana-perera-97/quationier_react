@@ -47,7 +47,7 @@
 export function dataStore(data) {
   console.log(data.answers);
   fetch(
-    "https://script.google.com/macros/s/AKfycby8z30ZPv2uGYOcnWFqOQfr_cJDhQR40a19VOSleic7K475uoCsdLCzO9canE_eEDGJRg/exec",
+    "https://script.google.com/macros/s/AKfycbxgg1kWa87FuuL_nLxBVLEKiToW6wJeqzyC7dK2EVPxVJ6OhCXljY42sH-g5XRdYIeelw/exec",
     {
       method: "POST",
       mode: "no-cors",

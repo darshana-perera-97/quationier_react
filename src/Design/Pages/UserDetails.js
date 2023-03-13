@@ -16,7 +16,27 @@ export default function UserDetails(prop) {
     size: "-",
     country: "-",
     total_mark: "",
-    answers: ["", "", "", "", "", ""],
+    answers: [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ],
   });
   const [value, setValue] = React.useState("");
   const [emailValidation, setemailValidation] = React.useState(false);
