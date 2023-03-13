@@ -22,6 +22,52 @@ const questionSet = [
       { c: 4, a: "More than 5 years" },
     ],
   },
+  {
+    que: "Are you experiencing any issues or challenges with your current hosting method?",
+    ans: [
+      { c: 2, a: "Yes" },
+      { c: 1, a: "No" },
+    ],
+  },
+  {
+    que: "What is the main challenge in your current operation?",
+    ans: [
+      { c: 0, a: "No apparent issues in our current operation" },
+      { c: 3, a: "DevOps/ Cyber Security" },
+      { c: 2, a: "Building and maintaining a competent team" },
+      { c: 1, a: "Capacity Planning and performance management" },
+      { c: 4, a: "Cost management and containment" },
+    ],
+  },
+  {
+    que: "How do you manage security and compliance in your hosting environment?",
+    ans: [
+      {
+        c: 1,
+        a: "We have a third-party security team/ experts that manage these aspects",
+      },
+      {
+        c: 2,
+        a: "We have a dedicated security team that manages these aspects",
+      },
+      { c: 3, a: "We use third-party security tools" },
+      {
+        c: 4,
+        a: "We use 3rd party software that is already security certified",
+      },
+      { c: 5, a: "We don't have a formal process in place for this" },
+    ],
+  },
+  // {
+  //   que: "",
+  //   ans: [
+  //     { c: , a: "" },
+  //     { c: , a: "" },
+  //     { c: , a: "" },
+  //     { c: , a: "" },
+  //     { c: , a: "" },
+  //   ],
+  // },
 ];
 
 export default function Quiz(prop) {

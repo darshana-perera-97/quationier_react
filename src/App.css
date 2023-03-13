@@ -48,14 +48,14 @@ body {
 }
 
 .page {
-  padding: 4% 0%;
+  padding: 4% 10%;
   margin: auto 12%;
   background-color: #ffffff;
 }
 
 .page1 {
   padding: 1% 0%;
-  margin: -6% 12%;
+  margin: 1% 0%;
   /* background-color: #ffffff; */
 }
 
@@ -205,6 +205,7 @@ p {
 }
 
 @media only screen and (max-width: 900px) {
+
   .main-page {
     display: block;
   }
@@ -250,4 +251,15 @@ select {
   border: 0px;
   outline: 0px;
   width: 100%;
+}
+
+.box {
+  color: #ffffff;
+  text-shadow: 0px 0px 8px #049ea1;
+  background-color: rgb(255, 255, 255);
+  /* For browsers that do not support gradients */
+  background-image: linear-gradient(to right,#ffffff,#049ea14d,#ffffff);
+
+  padding: 5%;
+
 }

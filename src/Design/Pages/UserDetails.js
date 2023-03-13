@@ -16,7 +16,7 @@ export default function UserDetails(prop) {
     size: "-",
     country: "-",
     total_mark: "",
-    answers: ["", ""],
+    answers: ["", "", "", "", "", ""],
   });
   const [value, setValue] = React.useState("");
   const [emailValidation, setemailValidation] = React.useState(false);
@@ -42,7 +42,7 @@ export default function UserDetails(prop) {
     <div>
       <div className="page1">
         <div className="main-page">
-          <div className="welcome-page">
+          <div className="welcome-page" style={{padding:"0px 5%"}}>
             <img src={logo} alt="company Logo" className="company-logo" />
             <img src={redHatlogo} alt="Redhat Logo" className="redhat-logo" />
             <h1 className="page-main-title">Service Questionnaire</h1>
@@ -52,7 +52,13 @@ export default function UserDetails(prop) {
               ever since the 1500s,
             </p>
             <div>
-              <button className="fill-form">Fill the Form </button>
+              <br />
+              <h2
+                className="page-main-title box"
+                title="Fill the form to continue"
+              >
+                Fill the Form{" "}
+              </h2>
             </div>
           </div>
           <div className="form">
@@ -91,7 +97,7 @@ export default function UserDetails(prop) {
                   const tmp = user;
                   tmp.email = e.target.value;
                   setUser(tmp);
-                  console.log(e.target.value);
+                  // console.log(e.target.value);
                   if (
                     e.target.value !== "" &&
                     e.target.value.endsWith(".com") &&
@@ -741,7 +747,12 @@ export default function UserDetails(prop) {
                 </button>
               </div>
             ) : (
-              <button className="button_1_d" disabled onClick={() => {}}>
+              <button
+                className="button_1_d"
+                onClick={() => {
+                  validate();
+                }}
+              >
                 Continue
               </button>
             )}
