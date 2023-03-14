@@ -40,6 +40,7 @@ export default function UserDetails(prop) {
   });
   const [value, setValue] = React.useState("");
   const [emailValidation, setemailValidation] = React.useState(false);
+  const [wemailValidation, setwemailValidation] = React.useState("");
   const [Validation, setValidation] = React.useState(false);
   function validate() {
     if (
@@ -62,7 +63,7 @@ export default function UserDetails(prop) {
     <div>
       <div className="page1">
         <div className="main-page">
-          <div className="welcome-page" style={{padding:"0px 5%"}}>
+          <div className="welcome-page" style={{ padding: "0px 5%" }}>
             <img src={logo} alt="company Logo" className="company-logo" />
             <img src={redHatlogo} alt="Redhat Logo" className="redhat-logo" />
             <h1 className="page-main-title">Service Questionnaire</h1>
@@ -122,12 +123,25 @@ export default function UserDetails(prop) {
                     e.target.value !== "" &&
                     e.target.value.endsWith(".com") &&
                     !e.target.value.endsWith("gmail.com") &&
-                    !e.target.value.endsWith("gmail.com")
+                    !e.target.value.endsWith("yahoo.com")
                   ) {
                     setemailValidation(true);
                     // console.log("Email Ok");
                   } else {
                     setemailValidation(false);
+                  }
+                  if (
+                    !e.target.value.endsWith("gmail.com") &&
+                    !e.target.value.endsWith("yahoo.com")
+                  ) {
+                    setwemailValidation({ text: ".", color: "white" });
+                    // console.log("Email Ok");
+                  } else {
+                    // setwemailValidation("Enter a Working Email");
+                    setwemailValidation({
+                      text: "Enter a Working Email",
+                      color: "red",
+                    });
                   }
                 }}
               />
@@ -747,6 +761,22 @@ export default function UserDetails(prop) {
             </div>
             {/* <p>fill the Form to Continue</p> */}
             {/* {console.log(user.email.includes("gmail.com"))} */}
+            {/* {!wemailValidation ? (
+              <p
+                style={{ color: "red", fontSize: "12px", paddingBottom: "6px" }}
+              >
+                A
+              </p>
+            ) : (
+              <p
+                style={{ color: "red", fontSize: "12px", paddingBottom: "6px" }}
+              >
+                Enter a work Email
+              </p>
+            )} */}
+            <p style={{ color: wemailValidation.color, fontSize: "11px",marginBottom:"2px" }}>
+              {wemailValidation.text}
+            </p>
             {Validation ? (
               //   user.email !== "-"
               // !user.email.includes("gmail.com") &&
