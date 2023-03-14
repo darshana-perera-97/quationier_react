@@ -44,7 +44,7 @@ body {
   font-family: "Nunito Sans", sans-serif;
   font-weight: bolder;
   background-color: #17a5a51f;
-  text-align: center
+  text-align: center;
 }
 
 .page {
@@ -205,7 +205,6 @@ p {
 }
 
 @media only screen and (max-width: 900px) {
-
   .main-page {
     display: block;
   }
@@ -255,11 +254,17 @@ select {
 
 .box {
   color: #ffffff;
-  text-shadow: 0px 0px 8px #049ea1;
+  text-shadow: 0px 0px 8px #6652a3;
   background-color: rgb(255, 255, 255);
   /* For browsers that do not support gradients */
-  background-image: linear-gradient(to right,#ffffff,#049ea14d,#ffffff);
+  background-image: linear-gradient(
+    to right,
+    #ffffff,
+    #6652a362,
+    #6652a3c5,
+    #6652a362,
+    #ffffff
+  );
 
-  padding: 5%;
-
+  padding: 3% 0px;
 }
